@@ -1,0 +1,244 @@
+
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+
+background: url(passive.png) white;
+
+height: 70px;
+
+margin: 0;
+
+overflow: hidden;
+
+display: flex;
+
+justify-content: start;
+
+background-size: 10%;
+
+background-position: 0% 50%;
+
+background-repeat: no-repeat;
+
+padding: 20px;
+
+width: 100%;
+
+position: fixed;
+
+box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+
+z-index: 3;
+
+}
+.logo{
+        
+width: auto;
+        
+height: 193px;
+        
+position: relative;
+        
+top: -61px;
+    }
+    .titulo {
+        position: relative;
+        left: 60%;
+        color: #ff8787;
+        font-size: 1.5vw;
+    }
+    .titulo > h1 {
+        margin: 0;
+    }
+    .blockone{
+        background: #ff8787;
+        width: 50%;
+        min-height: 100vh;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+    
+    #primerseg{
+    position: relative;
+    margin-top: 10%;
+    }
+    #primerseg >h1{
+        color: white;
+        font-size: 2.7vw;
+        font-family: 'Roboto', sans-serif;
+    }
+    #codigoRaiz{
+        width: 40vw;
+        transition: all 0.5s ease;
+        border: none;
+    }
+    #codigoRaiz:hover{
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+    .btn-position{
+        display: flex;
+        justify-content: center;
+    }
+    #generar{
+      
+        border: solid 1px white;
+        padding: 15px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    
+        font-size: 0.8vw;
+        background: white;
+        color: #ff8787;
+    }
+    #generar:hover{
+        
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+       
+    }
+    .blocktwo{
+        background: white;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        }
+
+        .respuesta{
+            background: #FFEB3B;
+            padding: 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 15px;
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0, 1.11);
+        }
+        .respuesta:hover{
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+
+        .animacionC{
+            background: #FFEB3B;
+              padding: 30px;
+              cursor: pointer;
+              border-radius: 8px;
+            animation: 1s   cubic-bezier(0.42, 0, 0, 1.13);
+            animation-name: copiado;
+            transition: ease all 1s;
+          }
+          @keyframes copiado {
+                0%{
+                    background:#8eff8e;
+                }
+                50%{
+                    background:#8eff8e;
+                }
+                100%{
+                    background:#FFEB3B;
+                }
+            }
+            .contenedor{
+                padding-top: 118px;
+            }
+            .contenedor-input{
+                display: flex;
+                flex-flow: column;
+                width: 100%;
+                margin: 20px;
+            }
+            .contenedor-input>input{
+                
+border: solid 2px #ff8787;
+                
+border-top: 0px;
+                
+border-left: 0px;
+                
+border-right: 0px;
+                
+border-radius: 2px;
+                
+padding: 4px;
+                
+margin: 10px;
+                
+width: 90%;
+                
+outline: 0px;
+            }
+            .contenedor-input >div > input{
+                border: solid 2px #ff8787;
+                border-top: 0px;
+                border-left: 0px;
+                border-right: 0px;
+                border-radius: 2px;
+                padding: 4px;
+                margin: 10px;
+                width: 100%;
+            }
+            input[type='checkbox']{
+                width: 15px!important;
+            }
+            .contenedor>p{
+                transition: all 0.9s cubic-bezier(0.04, 0.21, 0.25, 1);
+                font-family: sans-serif;
+                cursor: pointer;
+                margin: 5px;
+                padding: 20px;
+            }
+            .contenedor>p::after{
+              content: "CLICK PARA COPIAR";
+              display: block;
+              padding: 5px;
+              font-size: 12px;
+              background-size: cover;
+              margin-left: 41%;
+              font-weight: bold;
+              color: #ff8787;
+        }
+        
+            
+            .contenedor>p:hover{
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+            }
+            .contenedor-resp{display: flex;justify-content: center;flex-flow: column;align-items: center;padding-bottom: 50px;}
+            #boton-copiar{
+                
+border: solid 1px white;
+                
+cursor: pointer;
+                
+transition: all 0.5s ease;
+                
+font-size: 0.8vw;
+                
+background: white;
+                
+color: #ff8787;
+                
+padding: 20px 80px 20px 80px;
+            }
+            #boton-copiar:hover{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+            }
+            .contenedorRES{
+                width: 80%;
+            }
+            #campoCopiar{
+                opacity: 0;
+                position: absolute;
+                left: 124%;
+            }
+            #campoCopiar2{
+            position: absolute;
+            left: 124%;
+            }

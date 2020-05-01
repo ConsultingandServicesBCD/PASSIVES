@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css.css">
+    <link rel="shortcut icon" href="elemento.png">
+    <title>RYANAIR</title>
+</head>
+<body>
+    <div class="header"> <a href="https://passives.000webhostapp.com/"><img class="logo" src="passive.png" alt=""></a>
+    
+    
+        <div class="titulo">
+    <h1>RYANAIR</h1>
+    
+        </div>
+        </div>
+    <div class="blockone">
+        <div id="primerseg">
+          <h1>Pegar código fuente</h1>
+          <textarea name="correo" id="codigoRaiz" cols="100" rows="20"></textarea>  
+            <br>
+          <br>
+          <div class="btn-position">
+            <button id="generar" >GENERAR</button>
+          </div>
+        </div>
+      </div>
+      <div class="blocktwo">
+        <div id="contenedor" class="contenedor">
+          <div class="contenedorTablas">
+            <div id="contenido-ruta" class="contenido-ruta">
+    <table id="ida">
+        <tbody><tr><td style="font-size: 25px; text-align: center;">IDA</td></tr>
+        <tr>
+            <td>Compañía</td>
+            <td id="compa">FR</td>
+        </tr>
+        <tr>
+            <td>Nº de Vuelo</td>
+            <td id="Nvuelo"></td>
+        </tr>
+        <tr>
+            <td>Fecha de Salida
+            </td>
+            <td id="fechaS"></td>
+        </tr>
+        <tr>
+            <td>Ciudad de Salida
+            </td>
+            <td id="CiudaSa"></td>
+        </tr>
+        <tr>
+            <td>Ciudad de llegada</td>
+            <td id="ciudadlle"></td>
+        </tr>
+        <tr>
+            <td>Numero de Pasajeros</td>
+            <td id="numero_p_ida"></td>
+        </tr>
+        <tr>
+            <td>Hora de salida
+    
+    
+            </td>
+            <td id="Hsalida"></td>
+        </tr>
+        <tr>
+            <td>Hora de llegada</td>
+            <td id="Hllegada"></td>
+        </tr>
+        <tr>
+            <td>Localizador</td>
+            <td id="Localizador"></td>
+        </tr>
+    </tbody></table>
+    <table id="vuelta" style="display: none;">
+            <tbody><tr><td style="font-size: 25px; text-align: center;">VUELTA</td></tr>
+            <tr>
+                <td>Compañía</td>
+                <td id="compa_vuelta">FR</td>
+            </tr>
+            <tr>
+                <td>Nº de Vuelo</td>
+                <td id="Nvuelo_vuelta"></td>
+            </tr>
+            <tr>
+                <td>Fecha de Salida
+                </td>
+                <td id="fechaS_vuelta"></td>
+            </tr>
+            <tr>
+                <td>Ciudad de Salida
+                </td>
+                <td id="CiudaSa_vuelta"></td>
+            </tr>
+            <tr>
+                <td>Ciudad de llegada</td>
+                <td id="ciudadlle_vuelta"></td>
+            </tr>
+            <tr>
+                <td>Numero de Pasajeros</td>
+                <td id="numero_p_vuelta"></td>
+            </tr>
+            
+            <tr>
+                <td>Hora de salida
+        
+        
+                </td>
+                <td id="Hsalida_vuelta"></td>
+            </tr>
+            <tr>
+                <td>Hora de llegada
+        
+        
+                </td>
+                <td id="Hllegada_vuelta"></td>
+            </tr>
+            <tr>
+                <td>Localizador</td>
+                <td id="Localizador_vuelta"></td>
+            </tr>
+        </tbody></table>
+        <textarea id="focus-copiar" style="opacity:0"></textarea>
+    </div>
+    <div class="cont_btn">
+        <p id="BtnIdaVuelta" class="generar">Copiar pasivos</p>
+    </div>
+    <div class="segundaparte">
+    <table>
+        <tbody>
+        <tr>
+            <td>Segmento Vuelos</td>
+            <td><input id="SegmentoV" class="SegmentoV" type="text"></td>
+        </tr>
+       
+        <tr>
+            <td>Importe Bruto</td>
+            <td id="ImporteB"></td>
+        </tr>
+        <tr>
+            <td>RM*PSCREF-</td>
+            <td><input id="PSCRV" class="SegmentoV" type="text"></td>
+        </tr>
+        <tr>
+            <td>FPCC ejem. AX111111111111/1111</td>
+            <td><input id="FPCC" class="SegmentoV" type="text"></td>
+        </tr>
+        <!--
+        <tr>
+            <td>Nº de Billete 1
+            </td>
+            <td ><input type="text"id="NumeroBillete"></td>
+            
+        </tr>
+    -->
+       </tbody><tbody id="Segmentosadd"></tbody>
+        <tbody><tr id="nodobe">
+            <td>Sobrecomisión
+    
+            </td>
+            <td><input type="text" class="SegmentoV" id="SobreComision"></td>
+        </tr>
+    </tbody>
+    </table>
+    <textarea name="copiadodos" id="copiadodos" cols="3" rows="1" style="
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    "></textarea>
+</div>
+
+    <div class="cont_btn">
+        <p id="segmentodos" class="generar">Copiar pasivos</p>
+    </div>
+    </div>
+        </div>
+
+</body>
+<script src="js.js"></script>
+  </html>
+

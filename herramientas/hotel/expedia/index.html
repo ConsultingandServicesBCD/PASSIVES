@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    <title>EXPEDIA</title>
+</head>
+<body>
+  <div class="header"> <a href="https://passives.000webhostapp.com/"><img class="logo" src="passive.png" alt=""></a>
+    
+    
+    <div class="titulo">
+<h1>EXPEDIA</h1>
+
+    </div>
+    </div>
+    <div class="blockone">
+        <div id="primerseg">
+          <h1>Pegar código fuente</h1>
+          <textarea name="correo" id="codigoRaiz"  cols="100" rows="20" ></textarea>  
+            <br />
+          <br />
+          <div class="btn-position">
+            <button id="generar" onclick="generar()">GENERAR</button>
+          </div>
+        </div>
+      </div>
+      <div class="blocktwo">
+        <div id="contenedor" class="contenedor">
+          <div id="div_ux">
+            <div id="respuestaD">
+                <p id="respuesta" onclick="copiar(this)" class="respuesta"></p>
+                <table id="tabla_CH">
+                        <tbody>
+                            <tr><td>CIUDAD</td><td><input type="text" id="ciudad"></td></tr>
+                            <tr><td>TIPO DE HABITACIÓN</td><td><input type="text" id="THabitacion"></td></tr>
+                            </tbody>
+            </table>
+          
+            
+            </div>
+            <textarea name="" cols="30" rows="10" id="copiarArea"></textarea>
+            <div class="segundoSegmento">
+                <table id="tabla_ux">
+                <tbody>
+                    <tr><td>SEGMENTO</td><td><input type="text" id="segmento"></td></tr>
+                    <tr style="display: none;"><td>RM*ACC</td><td><input type="text" id="lineaDos"></td></tr>
+                    <tr><td>PRESTARARIO</td><td><input type="text" id="lineaTres"></td><td><input type="text" id="Temporal" value="167467" size="3"></td></tr>
+                   
+                    <tr><td>Tipo de bono  Ej. HR/HO/PP</td><td><input type="text" id="lineaCuatro"></td></tr>
+                    <tr><td>Regimen Ej. BE/BB/MP/AI</td><td><input type="text" id="lineaCinco"></td></tr>
+                    <tr><td>Comision Ej. 10.00 </td><td><input type="text" id="lineaSeis"></td></tr>
+                    <tr><td>Volcar a Exp. Ej E00/1620/141424/1</td><td><input type="text" id="lineaSiete"></td></tr>
+                    <tr id="nodobe">
+                        <td>Sobrecomisión
+                
+                        </td>
+                        <td><input type="text" id="SobreComision"></td>
+                    </tr>
+                </tbody>
+               
+            </table>
+            <div class="cont_btn_dos">
+                <p id="copiarSegmento_dos">Copiar pasivos</p>
+            </div>
+            </div>
+            </div>
+        </div>
+</body>
+<script src="js.js"></script>
+</html>
