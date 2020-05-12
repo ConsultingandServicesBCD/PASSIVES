@@ -58,6 +58,9 @@ var texto_Area=document.getElementById("codigoRaiz");
 
 var nodo_respuesta=document.getElementById("respuesta");
 var alertaCoche=document.getElementById('alertaCoche')
+var rmacc=document.getElementById('reservaCode0')
+var rmaca=document.getElementById('reservaCode1')
+var LOCALIZADOR_GlOVAL//SE UTILIZARA PARA SACAR USAR ESTE LOCALIZADOR FUERA DE LA FUNCION GENERAR
 function generar(){
     var texto_Area_V=texto_Area.value;
 
@@ -99,7 +102,10 @@ function generar(){
          var linea="SS7X"+numero_nuevo+"Y"+formato_fecha+ciudades[0]+ciudades[1]+"GK"+numero_pasajeros+"/"+hora_salida+hora_llegada+"/"+localizador;
         nodo_respuesta.setAttribute("onclick","copiar(this)");
          nodo_respuesta.innerText=linea;
-                   
+          
+            rmacc.innerText="RM*ACC"+localizador
+            rmaca.innerText="RM*ACEMPN-"+localizador
+            LOCALIZADOR_GlOVAL=localizador
 }
 
 btn_generar.addEventListener("click",generar);
@@ -110,8 +116,9 @@ var segundSEG_nodo=document.getElementById("segundSEG");
 var segundSEG=document.getElementById("segundSEG").getElementsByTagName("p");
 var segundSEG_rango=segundSEG.length;
 function mostrarInputs(){
+
    for(var i=0; i<=segundSEG_rango;i++){
-       var array=["RM*ACCD7P4ML/s","RM*ACEMPN-D7P4ML/s","RM*ACEMPA-7X/s","RM*ACESAL-0.0/s","RM*ACEMPT-0.0/s","RM*PSCSCOM-0.0/s","RM*ACECOM-00.00/s","RM*ACELCTB-CJM/s","RM*ACESUP-7X/s"];
+       var array=["RM*ACC"+LOCALIZADOR_GlOVAL+"/s","RM*ACEMPN-"+LOCALIZADOR_GlOVAL+"/s","RM*ACEMPA-7X/s","RM*ACESAL-0.0/s","RM*ACEMPT-0.0/s","RM*PSCSCOM-0.0/s","RM*ACECOM-00.00/s","RM*ACELCTB-CJM/s","RM*ACESUP-7X/s"];
        var objeto=segundSEG.item(i);
        var valor_objeto=objeto.innerText;
         var nuevo_valor=segmento_input.value;
