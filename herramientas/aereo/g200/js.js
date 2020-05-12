@@ -111,7 +111,7 @@ var segundSEG=document.getElementById("segundSEG").getElementsByTagName("p");
 var segundSEG_rango=segundSEG.length;
 function mostrarInputs(){
    for(var i=0; i<=segundSEG_rango;i++){
-       var array=["RM*ACCD7P4ML/s","RM*ACEMPN-D7P4ML/s","RM*ACEMPA-7X/s","RM*ACESAL-0.0/s","RM*ACEMPT-0.0/s","RM*PSCSCOM-0.0/s","RM*ACECOM-00.00/s","RM*ACELCTB-ETN/s","RM*ACESUP-7X/s"];
+       var array=["RM*ACCD7P4ML/s","RM*ACEMPN-D7P4ML/s","RM*ACEMPA-7X/s","RM*ACESAL-0.0/s","RM*ACEMPT-0.0/s","RM*PSCSCOM-0.0/s","RM*ACECOM-00.00/s","RM*ACELCTB-CJM/s","RM*ACESUP-7X/s"];
        var objeto=segundSEG.item(i);
        var valor_objeto=objeto.innerText;
         var nuevo_valor=segmento_input.value;
