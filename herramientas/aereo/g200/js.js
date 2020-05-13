@@ -96,7 +96,7 @@ function generar(){
        
        var ciudades=texto_Area_V.match(/(?<=Ruta:.)\w{3,}|(?<=Ruta:.\w{3,}.*\)(\s{0,}\-\s{0,}))\w{3,}/g);
        //esta xpresion regular no es del todo correcta pero nos funciona para saber el numero de pasajeros pero no para capturar el nombre completo de los pasajeros pero ese no es el objetivo ahora mismo. 
-       var pasajeros=texto_Area_V.match(/(?<=(Viajeros:.*\n)|(Viajeros:.*\n(.*\n){1,}))(\w{1,}[A-Z](\s|)){1,3}/g);
+       var pasajeros=texto_Area_V.match(/(?<=(Viajeros:.*\n)|(Viajeros:.*\n(.*\n){1,}))(\w{1,}[A-Z](\s|)){1,5}\n/g);
        var numero_pasajeros=pasajeros.length;
        var localizador=buscar_Match(/(?<=Reserva)\d{1,}/,texto_Area_V);
          var linea="SS7X"+numero_nuevo+"Y"+formato_fecha+ciudades[0]+ciudades[1]+"GK"+numero_pasajeros+"/"+hora_salida+hora_llegada+"/"+localizador;
