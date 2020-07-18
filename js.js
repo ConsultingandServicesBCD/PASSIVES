@@ -30,6 +30,14 @@ var arrayTREN=[
                     url:'herramientas/aereo/g200/index.html'
                 }
     ]
+
+    var arrayPLANNER=[
+        Indra={
+            titulo:'Indra',
+            url:'herramientas/planner/indra/index.html'
+    }
+]
+
 function packHerramientas(){
     
 }
@@ -68,6 +76,9 @@ function disparar(sujeto) {
       }
       if(tipo==="AEREO"){
         arrayAEREO.forEach((index)=>{box(index)})  
+      }
+      if(tipo==="PLANNER"){
+        arrayPLANNER.forEach((index)=>{box(index)})  
       }
     
 }
