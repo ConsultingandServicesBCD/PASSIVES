@@ -35,7 +35,11 @@ var arrayTREN=[
         Indra={
             titulo:'Indra',
             url:'herramientas/planner/indra/index.html'
-    }
+    },
+    talgo={
+        titulo:'talgo',
+        url:'herramientas/planner/talgo/index.html'
+}
 ]
 
 function packHerramientas(){

@@ -105,27 +105,27 @@ function Generar(){
   
   array_hecho.push(nombre_autorizador_result)
       // CUARTO RM
-   var rm_solicitud_valor=buscar_Match(/(?<=\W)\d{10}(?=\n)/,valor_Textoarea)
-   var rm_solicitud_result="RM*ACECRM/SOLICITUD-"+rm_solicitud_valor;
-   var rm_CC_result="RM*ACC"+rm_solicitud_valor;
-      if(rm_solicitud_valor!=undefined){
-        if(rm_solicitud_valor.length>0){
-          array_hecho.push(rm_solicitud_result)
-          array_hecho.push(rm_CC_result)
-        }
-      }
-     
+   var rm_centroCoste_valor=valor_Textoarea.match(/(?<=\W)\d{0,}(?=\s\-\s.*\n)/g)
+ var centro_de_coste_result="RM*ACECRM/CENTRO COSTE-"+rm_centroCoste_valor[1]
+array_hecho.push(centro_de_coste_result)
    // QUINTO RM
-   var rm_proyecto_valor=buscar_Match(/(?<=PROYECTO\s)\S{0,}/,valor_Textoarea);   
-   console.log(rm_proyecto_valor)
-   var rm_proyecto_result="RM*ACECRM/PROYECTO-"+rm_proyecto_valor;
-   if(rm_proyecto_valor!=undefined){
-    if(rm_proyecto_valor.length>0){
-      array_hecho.push(rm_proyecto_result)
-    }
-   }
-  
-   
+  var reatrp_valor=buscar_Match(/.*\w[A-Za-z](?=\s\-.*\s[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4}))/,valor_Textoarea)
+  var reatrp_result="RM*ACECRM/REATRP-"+reatrp_valor;
+
+ array_hecho.push(reatrp_result)
+  //sexto RM
+  var TQ_rm_valor=buscar_Match(/(?<=Porcentaje\s(.*\s))\d{0,}/,valor_Textoarea)
+  var TQ_rm_result="RM*ACECRM/TQ3CD3-"+TQ_rm_valor
+  array_hecho.push(TQ_rm_result)
+
+
+  //SEPTIMO RM
+  var RM_imputacion_VALOR=buscar_Match(/(?<=Objeto de imputación\s\d{0,}\s)\S{0,}(?=\n)/,valor_Textoarea)
+  var RM_imputacion_result="RM*ACECRM/OBJETO IMPUTACION 2-"+RM_imputacion_VALOR;
+
+  if(RM_imputacion_VALOR!=undefined){
+array_hecho.push(RM_imputacion_result)
+  }
 
   array_hecho.forEach(element=> {
     var et_p=document.createElement("p")
