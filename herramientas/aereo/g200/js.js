@@ -87,19 +87,21 @@ function generar(){
                     }
                    
 
-     var fecha_salida=buscar_Match(/(?<=Salida:.)\d{2}\/\d{2}\/\d{4}/,texto_Area_V);
+     var fecha_salida=buscar_Match(/(?<=salida:.)\d{2}\/\d{2}\/\d{4}/,texto_Area_V);
                         var formato_fecha=formatoFecha(fecha_salida);
-      var hora_salida=buscar_Match(/(?<=Salida:.\d{2}\/\d{2}\/\d{4}\s*)\d{2}\:\d{2}/,texto_Area_V);
+      var hora_salida=buscar_Match(/(?<=salida:.\d{2}\/\d{2}\/\d{4}\s*)\d{2}\:\d{2}/,texto_Area_V);
        hora_salida=hora_salida.replace(":","");
-       var hora_llegada=buscar_Match(/(?<=(Regreso:|Llegada:).\d{2}\/\d{2}\/\d{4}\s*)\d{2}\:\d{2}/,texto_Area_V);
+       var hora_llegada=buscar_Match(/(?<=(Regreso:|llegada:).\d{2}\/\d{2}\/\d{4}\s*)\d{2}\:\d{2}/,texto_Area_V);
        hora_llegada=hora_llegada.replace(":","");    
        
-       var ciudades=texto_Area_V.match(/(?<=Ruta:.)\w{3,}|(?<=Ruta:.\w{3,}.*\)(\s{0,}\-\s{0,}))\w{3,}/g);
+       var ciudades=texto_Area_V.match(/(?<=Ruta:.)\w{3,}|(?<=Ruta:.\w{3,}.*\)(\s{0,}\-\s{0,}))\w{3,}/g);//no se utiliza por ahora
+       var ciudad_salida=buscar_Match(/(?<=Salida:.)\w{0,}/,texto_Area_V)
+       var ciudad_llegada=buscar_Match(/(?<=Llegada:.)\w{0,}/,texto_Area_V)
        //esta xpresion regular no es del todo correcta pero nos funciona para saber el numero de pasajeros pero no para capturar el nombre completo de los pasajeros pero ese no es el objetivo ahora mismo. 
-       var pasajeros=texto_Area_V.match(/(?<=(Viajeros:.*\n)|(Viajeros:.*\n(.*\n){1,}))(\w{1,}[A-Z](\s|)){1,5}\n/g);
+       var pasajeros=texto_Area_V.match(/(?<=(Viajeros:.*\n)|(Viajeros:.*\n(.*\n){1,}))(\w{1,}[A-Z-Ñ](\s|)){1,5}\n/g);
        var numero_pasajeros=pasajeros.length;
-       var localizador=buscar_Match(/(?<=Reserva)\d{1,}/,texto_Area_V);
-         var linea="SS7X"+numero_nuevo+"Y"+formato_fecha+ciudades[0]+ciudades[1]+"GK"+numero_pasajeros+"/"+hora_salida+hora_llegada+"/"+localizador;
+       var localizador=buscar_Match(/(?<=Reserva\s{0,})\d{1,}/,texto_Area_V);
+         var linea="SS7X"+numero_nuevo+"Y"+formato_fecha+ciudad_salida+ciudad_llegada+"GK"+numero_pasajeros+"/"+hora_salida+hora_llegada+"/"+localizador;
         nodo_respuesta.setAttribute("onclick","copiar(this)");
          nodo_respuesta.innerText=linea;
           
