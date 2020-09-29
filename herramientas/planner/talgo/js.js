@@ -106,7 +106,7 @@ function Generar() {
     array_hecho.push(rm_acc_result);
     // TERCER RM -primera parte
     var numero_autorizador_valor = buscar_Match(
-      /(?<=\D)\d{4}(?=\s{0,}\-\s{0,}.*\n\#)/,
+      /(?<=\D)\d{0,}(?=\s{0,}\-\s{0,}.*\n\#)/,
       valor_Textoarea
     );
     var numero_autorizador_result =
@@ -115,7 +115,7 @@ function Generar() {
 
     // TERCER RM -segunda parte
     var nombre_autorizador_valor = buscar_Match(
-      /(?<=\D\d{4}\s{0,}\-\s{0,}).*(?=\n\#)/,
+      /(?<=\D\d{0,}\s{0,}\-\s{0,}).*(?=\n\#)/,
       valor_Textoarea
     );
     var arranombre = nombre_autorizador_valor.split(" ");
