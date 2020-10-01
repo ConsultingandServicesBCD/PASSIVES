@@ -11,6 +11,14 @@ function buscar_Match(expresionregular, textoareaw) {
     return buscando_Match_Plano[0];
   }
 }
+function no_encontrado(texto, texto2) {
+  alert(texto);
+
+  var motivo = prompt(texto2);
+
+  motivo = motivo.toUpperCase();
+  return motivo;
+}
 
 function formatoFecha(inputFecha) {
   var arrayFechas_Letras = [];
@@ -106,16 +114,22 @@ function Generar() {
     array_hecho.push(rm_acc_result);
     // TERCER RM -primera parte
     var numero_autorizador_valor = buscar_Match(
-      /(?<=\D)\d{0,}(?=\s{0,}\-\s{0,}.*\n\#)/,
+      /(?<=\D)\d{0,}(?=\s{0,}\-\s{0,}.*\n\C\d{0,})/,
       valor_Textoarea
     );
+    if (numero_autorizador_valor === undefined) {
+      var texto1 =
+        "Numero de peticionario no encontrado,introduzcalo manualmente";
+      var texto2 = "Numero de peticionario";
+      numero_autorizador_valor = no_encontrado(texto1, texto2);
+    }
     var numero_autorizador_result =
       "RM*ACECRM/N EMPLEADO PETICIONARIO-" + numero_autorizador_valor;
     array_hecho.push(numero_autorizador_result);
 
     // TERCER RM -segunda parte
     var nombre_autorizador_valor = buscar_Match(
-      /(?<=\D\d{0,}\s{0,}\-\s{0,}).*(?=\n\#)/,
+      /(?<=\D\d{0,}\s{0,}\-\s{0,}).*(?=\n(\#|\F\.))/,
       valor_Textoarea
     );
     var arranombre = nombre_autorizador_valor.split(" ");
@@ -145,6 +159,12 @@ function Generar() {
     var rm_centroCoste_valor = valor_Textoarea.match(
       /(?<=\d{0,7}\s\-\s.*\n).*(?=\s\-)/g
     );
+    if (rm_centroCoste_valor === undefined) {
+      var texto1 = "Centro de coste no encontrado,introduzcalo manualmente";
+      var texto2 = "Centro de coste";
+      rm_centroCoste_valor = no_encontrado(texto1, texto2);
+    }
+
     var centro_de_coste_result =
       "RM*ACECRM/CENTRO COSTE-" + rm_centroCoste_valor[0];
     array_hecho.push(centro_de_coste_result);
@@ -153,6 +173,17 @@ function Generar() {
       /.*\w[A-Za-z](?=\s\-.*\s[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4}))/,
       valor_Textoarea
     );
+
+    if (reatrp_valor === undefined) {
+      alert(
+        "El motivo de viaje no ha sido encontrado.Por favor introduzca el motivo del viaje manualmente"
+      );
+
+      var motivo = prompt("Motivo de viaje");
+
+      motivo = motivo.toUpperCase();
+      reatrp_valor = motivo;
+    }
     var reatrp_result = "RM*ACECRM/REATRP-" + reatrp_valor;
 
     array_hecho.push(reatrp_result);
