@@ -129,7 +129,7 @@ function Generar() {
 
     // TERCER RM -segunda parte
     var nombre_autorizador_valor = buscar_Match(
-      /(?<=\D\d{0,}\s{0,}\-\s{0,}).*(?=\n(\#|\F\.))/,
+      /(?<=\D\d{0,}\s{0,}\-\s).*(?=\n(\#|\F\.))/,
       valor_Textoarea
     );
     var arranombre = nombre_autorizador_valor.split(" ");
@@ -170,20 +170,10 @@ function Generar() {
     array_hecho.push(centro_de_coste_result);
     // QUINTO RM
     var reatrp_valor = buscar_Match(
-      /.*\w[A-Za-z](?=\s\-.*\s[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4}))/,
+      /CLIENT\sMTG|INTL\sMTG|OTHER|REPAIR\sMAINT|TRNG\sSEMINAR/,
       valor_Textoarea
     );
 
-    if (reatrp_valor === undefined) {
-      alert(
-        "El motivo de viaje no ha sido encontrado.Por favor introduzca el motivo del viaje manualmente"
-      );
-
-      var motivo = prompt("Motivo de viaje");
-
-      motivo = motivo.toUpperCase();
-      reatrp_valor = motivo;
-    }
     var reatrp_result = "RM*ACECRM/REATRP-" + reatrp_valor;
 
     array_hecho.push(reatrp_result);
