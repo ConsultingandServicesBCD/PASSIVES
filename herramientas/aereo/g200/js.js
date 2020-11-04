@@ -186,3 +186,5 @@ function copiarSEG() {
   }
 }
 btn_Copiar.addEventListener("click", copiarSEG);
+
+

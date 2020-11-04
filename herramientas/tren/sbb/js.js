@@ -66,7 +66,7 @@ function generar() {
        var  texto_Area_html=document.getElementById("codigoRaiz");
        var texto_Area=texto_Area_html.value; //todo A0
        if(texto_Area===""){
-alert("CAMPO VACÍO");
+        alert("CAMPO VACÍO");
        }else{
     var contenedor_destino=document.getElementById("contenedor");
     contenedor_destino.innerHTML="";
@@ -90,6 +90,7 @@ alert("CAMPO VACÍO");
             }else{
                 etiquetap.setAttribute("onclick","copiar(this)");
             }
+            
             var n_ticked=i+1;
             var input_agente=prompt("AEROPUERTO TICKED "+n_ticked);
             input_agente=input_agente.toUpperCase();

@@ -94,7 +94,7 @@ var bton_copiar = document.getElementById("bton_copiar");
 var array_hecho = []; //este array lo usaremos para guardar los rm listos para copiar, una vez se hayan tratado los formatos y demas
 function Generar() {
   var valor_Textoarea = textoarea.value;
-  var verificacion_autorizada = /(?<=C\d{5}\d{8}\n)Autorizada/.test(
+  var verificacion_autorizada = /(?<=C\d{5}\d{8}\n)(Autorizada|Approved)/.test(
     valor_Textoarea
   );
 

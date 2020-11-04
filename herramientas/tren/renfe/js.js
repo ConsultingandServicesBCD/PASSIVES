@@ -218,9 +218,11 @@ function Generar(){
          
   
           etiqueta_Input.setAttribute("id",idin);
-          etiqueta_Input.value=lineastk;
+          etiqueta_Input.value=lineastk
           array_lista_RM.push(lineastk)
+          console.log(array_lista_RM)
           array_lista_RM_largo.push(rm_lista_tarifa[contadorCero_tk])
+          console.log(array_lista_RM_largo)
          if(array_lista_RM.length===2){
             boxs_RM(array_lista_RM[0],array_lista_RM[1],array_lista_RM_largo[0],array_lista_RM_largo[1],contadorCero_tk)
             

@@ -223,8 +223,10 @@ function generar(){
            }
             
         }
+        
         var texto_juntar=arrayInsertar.join("\n")
         var texto_juntado=creartexto(texto_juntar);
+        console.log(texto_juntado)
         areacopiar.appendChild(texto_juntado);
       
         areacopiar.focus();
