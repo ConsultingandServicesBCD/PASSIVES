@@ -1,3 +1,6 @@
+
+
+
 function creartexto(inpuText) {
   var TextoAcolocar = document.createTextNode(inpuText);
   return TextoAcolocar;
@@ -114,7 +117,7 @@ function Generar() {
     array_hecho.push(rm_acc_result);
     // TERCER RM -primera parte
     var numero_autorizador_valor = buscar_Match(
-      /(?<=\D)\d{0,}(?=\s{0,}\-\s{0,}.*\n\C\d{0,})/,
+      /(?<=\D)\d{0,}(?=\s{0,}\-\s{0,}.*\n\C\d{0,}\s)/,
       valor_Textoarea
     );
     if (numero_autorizador_valor === undefined) {
@@ -129,7 +132,7 @@ function Generar() {
 
     // TERCER RM -segunda parte
     var nombre_autorizador_valor = buscar_Match(
-      /(?<=\D\d{0,}\s{0,}\-\s).*(?=\n(\#|\F\.))/,
+      /(?<=\D\d{0,}\s{0,}\-\s).*(\n\w{0,}|)(?=\n(\#\n|\F\.))/,
       valor_Textoarea
     );
     var arranombre = nombre_autorizador_valor.split(" ");
@@ -179,7 +182,7 @@ function Generar() {
     array_hecho.push(reatrp_result);
     //sexto RM
     var TQ_rm_valor = buscar_Match(
-      /(?<=Porcentaje\s(.*\s))\d{0,}/,
+      /(?<=Porcentaje\s(.*\s))(\d{0,}\-\d{0,}|\d{0,})/,
       valor_Textoarea
     );
     var TQ_rm_result = "RM*ACECRM/TQ3CD3-" + TQ_rm_valor;
